@@ -28,6 +28,8 @@ class MyHomePage extends StatefulWidget {
 }
 
 class _MyHomePageState extends State<MyHomePage> {
+  var _currentLocationText = "...";
+
   List<LocationData> locationDataList = [];
   Location keepUpdateLocation;
 
