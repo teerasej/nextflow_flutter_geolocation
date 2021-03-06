@@ -28,8 +28,6 @@ class MyHomePage extends StatefulWidget {
 }
 
 class _MyHomePageState extends State<MyHomePage> {
-  var _currentLocationText = "...";
-
   List<LocationData> locationDataList = [];
   Location keepUpdateLocation;
 
@@ -50,18 +48,7 @@ class _MyHomePageState extends State<MyHomePage> {
                 Text('$_currentLocationText'),
                 RaisedButton(
                   child: Text('ขอพิกัดตอนนี้'),
-                  onPressed: () async {
-                    var location = Location();
-                    var currentLocation = await location.getLocation();
-
-                    var locationText =
-                        '${currentLocation.latitude}, ${currentLocation.longitude}';
-
-                    print(locationText);
-                    setState(() {
-                      _currentLocationText = locationText;
-                    });
-                  },
+                  onPressed: () async {},
                 ),
                 RaisedButton(
                   child: Text('ขอพิกัดต่อเนื่อง'),
