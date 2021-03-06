@@ -50,7 +50,18 @@ class _MyHomePageState extends State<MyHomePage> {
                 Text('$_currentLocationText'),
                 RaisedButton(
                   child: Text('ขอพิกัดตอนนี้'),
-                  onPressed: () async {},
+                  onPressed: () async {
+                    var location = Location();
+                    var currentLocation = await location.getLocation();
+
+                    var locationText =
+                        '${currentLocation.latitude}, ${currentLocation.longitude}';
+
+                    print(locationText);
+                    setState(() {
+                      _currentLocationText = locationText;
+                    });
+                  },
                 ),
                 RaisedButton(
                   child: Text('ขอพิกัดต่อเนื่อง'),
